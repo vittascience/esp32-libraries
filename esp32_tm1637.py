@@ -76,7 +76,7 @@ class TM1637:
     if num<-9:self.show('lo')
     elif num>99:self.show('hi')
     else:self.write(self.encode_str('{0: >2d}'.format(num)))
-    self.write([_SEG[38],_SEG[12]],2)
+    self.write([_SEG[34],_SEG[12]],2)
   def show(self,str,colon=False):
     segs=self.encode_str(str)
     if len(segs)>1 and colon:segs[1]|=128
