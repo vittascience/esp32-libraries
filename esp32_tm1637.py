@@ -56,12 +56,12 @@ class TM1637:
     return segs
   def encode_char(self,char):
     o=ord(char)
-    if o == 32:return _SEG[36] # space
-    if o == 42:return _SEG[38] # star/degrees
-    if o == 45:return _SEG[37] # dash
-    if o >= 65 and o <= 90:return _SEG[o-55] # uppercase A-Z
-    if o >= 97 and o <= 122:return _SEG[o-87] # lowercase a-z
-    if o >= 48 and o <= 57:return _SEG[o-48] # 0-9
+    if o==32:return _SEG[36] #space
+    if o==42:return _SEG[38] #star/degrees
+    if o==45:return _SEG[37] #dash
+    if o>=65 and o<=90:return _SEG[o-55] #uppercase A-Z
+    if o>=97 and o<=122:return _SEG[o-87] #lowercase a-z
+    if o>=48 and o<=57:return _SEG[o-48] #0-9
     raise ValueError("Character out of range: {:d} '{:s}'".format(o,chr(o)))
   def number(self,num):
     num=max(-999,min(num,9999))
