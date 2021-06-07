@@ -1,5 +1,5 @@
 from utime import sleep_us,sleep_ms
-_SEG=bytearray(b'\x3F\x06\x5B\x4F\x66\x6D\x7D\x07\x7F\x6F\x77\x7C\x39\x5E\x79\x71\x3D\x06\x1E\x76\x38\x55\x54\x73\x67\x50\x6D\x78\x3E\x1C\x2A\x6E\x00\x40\x63')
+_SEG=bytearray(b'\x3F\x06\x5B\x4F\x66\x6D\x7D\x07\x7F\x6F\x77\x7C\x39\x5E\x79\x71\x3D\x76\x06\x1E\x76\x38\x55\x54\x3F\x73\x67\x50\x6D\x78\x3E\x1C\x2A\x76\x6E\x5B\x00\x40\x63')
 class TM1637:
   def __init__(self,clk,dio,bright=7):
     self.clk=clk
@@ -56,12 +56,12 @@ class TM1637:
     return segs
   def encode_char(self,char):
     o=ord(char)
-    if o==32:return _SEG[32]
-    if o==42:return _SEG[34]
-    if o==45:return _SEG[33]
-    if o>=65 and o<=90:return _SEG[o-55]
-    if o>=97 and o<=122:return _SEG[o-87]
-    if o>=48 and o<=57:return _SEG[o-48]
+    if o == 32:return _SEG[36] # space
+    if o == 42:return _SEG[38] # star/degrees
+    if o == 45:return _SEG[37] # dash
+    if o >= 65 and o <= 90:return _SEG[o-55] # uppercase A-Z
+    if o >= 97 and o <= 122:return _SEG[o-87] # lowercase a-z
+    if o >= 48 and o <= 57:return _SEG[o-48] # 0-9
     raise ValueError("Character out of range: {:d} '{:s}'".format(o,chr(o)))
   def number(self,num):
     num=max(-999,min(num,9999))
@@ -76,7 +76,7 @@ class TM1637:
     if num<-9:self.show('lo')
     elif num>99:self.show('hi')
     else:self.write(self.encode_str('{0: >2d}'.format(num)))
-    self.write([_SEG[34],_SEG[12]],2)
+    self.write([_SEG[38],_SEG[12]],2)
   def show(self,str,colon=False):
     segs=self.encode_str(str)
     if len(segs)>1 and colon:segs[1]|=128
