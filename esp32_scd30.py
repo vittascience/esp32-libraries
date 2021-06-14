@@ -21,20 +21,7 @@ class SCD30:
     SET_ALT_COMP = 0x5102
     GET_FIRMWARE_VER = 0xd100
     SOFT_RESET = 0xd304
-
     CLOCK_TIME_US = 10
-
-    # Generated using
-    # crc_table = []
-    # for crc in range(256):
-    #     for crc_bit in range(8):
-    #         if crc & 0x80:
-    #             crc = (crc << 1) ^ CRC8_POLYNOMIAL;
-    #         else:
-    #             crc = (crc << 1);
-    #         crc = crc%256
-    #     crc_table.append(crc)
-
     CRC_TABLE = [
         0, 49, 98, 83, 196, 245, 166, 151, 185, 136, 219, 234, 125, 76, 31, 46,
         67, 114, 33, 16, 135, 182, 229, 212, 250, 203, 152, 169, 62, 15, 92, 109,
