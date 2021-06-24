@@ -1,5 +1,5 @@
 # Esp32 Libraries
-This folder contains custom libraries for esp32 boards in Microython used on the platform https://en.vittascience.com/esp32/
+This folder contains custom libraries for ESP32 boards in MicroPython used on the platform https://en.vittascience.com/esp32/
 
 * _esp32_lcd_i2c.py_ driving Grove - LCD I2C Series https://wiki.seeedstudio.com/Grove-16x2_LCD_Series/
 * _esp32_bmp280.py_ driving BMP280 sensor by I2C https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/
@@ -14,7 +14,7 @@ This folder contains custom libraries for esp32 boards in Microython used on the
 * _esp32_pcf85063tp.py_ driving Grove - High Precision RTC (PCF85063TP) by I2C https://wiki.seeedstudio.com/Grove_High_Precision_RTC/
 
 # Librairies Esp32
-Ce dossier contient les librairies personnalisées pour micro:bit en Python et le firmware utilisé sur la plateforme https://fr.vittascience.com/esp32/
+Ce dossier contient les librairies personnalisées pour ESP32 en MicroPython sur la plateforme https://fr.vittascience.com/esp32/
 
 * _esp32_lcd_i2c.py_ pilote le module Grove LCD I2C Series https://wiki.seeedstudio.com/Grove-16x2_LCD_Series/
 * _esp32_bmp280.py_ pilote le capteur BMP280 en I2C https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/
