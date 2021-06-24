@@ -11,6 +11,7 @@ This folder contains custom libraries for esp32 boards in Microython used on the
 * _esp32_sht31.py_ driving Grove - Temp and Humidity Sensor (SHT31) by I2C https://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/
 * _esp32_si1145.py_ driving Grove - Sunlight Sensor (SI1145) by I2C https://wiki.seeedstudio.com/Grove-Sunlight_Sensor/
 * _esp32_th02.py_ driving Grove - Temperature&Humidity Sensor (TH02)" by I2C https://wiki.seeedstudio.com/Grove-TemptureAndHumidity_Sensor-High-Accuracy_AndMini-v1.0/
+* _esp32_pcf85063tp.py_ driving Grove - High Precision RTC (PCF85063TP) by I2C https://wiki.seeedstudio.com/Grove_High_Precision_RTC/
 
 # Librairies Esp32
 Ce dossier contient les librairies personnalisées pour micro:bit en Python et le firmware utilisé sur la plateforme https://fr.vittascience.com/esp32/
@@ -25,5 +26,6 @@ Ce dossier contient les librairies personnalisées pour micro:bit en Python et l
 * _esp32_sht31.py_ pilote le module Grove - Capteur de température et humidité (SHT31) en I2C https://wiki.seeedstudio.com/Grove-TempAndHumi_Sensor-SHT31/
 * _esp32_si1145.py_ pilote le module Grove - Capteur de luminosité (SI1145) en I2C https://wiki.seeedstudio.com/Grove-Sunlight_Sensor/
 * _esp32_th02.py_ pilote le module Grove - Capteur de température et d'humidité (TH02) en I2C https://wiki.seeedstudio.com/Grove-TemptureAndHumidity_Sensor-High-Accuracy_AndMini-v1.0/
+* _esp32_pcf85063tp.py_ pilote le module Grove - Haute Précision RTC (PCF85063TP) en I2C https://wiki.seeedstudio.com/Grove_High_Precision_RTC/
 
 Le contenu de ce dossier est OpenSource.
