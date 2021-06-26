@@ -1,4 +1,3 @@
-from machine import I2C
 from micropython import const
 from ustruct import unpack as unp
 
@@ -90,7 +89,7 @@ _BMP280_REGISTER_CONFIG = const(0xF5)  # IIR filter config
 _BMP280_REGISTER_DATA = const(0xF7)
 
 class BMP280:
-  def __init__(self, i2c=I2C(0), addr=BMP280_DEFAULT_I2C_ADDR, use_case=BMP280_CASE_HANDHELD_DYN):
+  def __init__(self, i2c, addr=BMP280_DEFAULT_I2C_ADDR, use_case=BMP280_CASE_HANDHELD_DYN):
     self._i2c = i2c
     self._i2c_addr = addr
 
