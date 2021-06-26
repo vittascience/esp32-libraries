@@ -25,8 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from machine import I2C, Pin
-from utime import sleep, sleep_ms
+import utime
 
 LCD_I2C_ADDR = 0x3e
 LCD_COMMAND = 0x80
@@ -72,15 +71,15 @@ LCD_5x8DOTS = 0x00
 class LCD1602:
 
     """ Initialize instance of LCD1602 """
-    def __init__(self, i2c=I2C(0), addr=LCD_I2C_ADDR):
+    def __init__(self, i2c, addr=LCD_I2C_ADDR):
         self._i2c = i2c
         self._addr = addr
         self.fct = LCD_5x10DOTS|LCD_2LINE
-        sleep_ms(50)
+        utime.sleep_ms(50)
         self._command(LCD_FUNCTIONSET|self.fct)
-        sleep_ms(4500)
+        utime.sleep_ms(4500)
         self._command(LCD_FUNCTIONSET|self.fct)
-        sleep_ms(150)
+        utime.sleep_ms(150)
         self._command(LCD_FUNCTIONSET|self.fct)
         self._command(LCD_FUNCTIONSET|self.fct)
         self.ctrl = LCD_DISPLAYON|LCD_CURSORON|LCD_BLINKOFF
@@ -125,12 +124,12 @@ class LCD1602:
     """ Return to home """
     def home(self):
         self._command(LCD_RETURNHOME)
-        sleep_ms(2)
+        utime.sleep_ms(2)
 
     """ Clear screen """
     def clear(self):
         self._command(LCD_CLEARDISPLAY)
-        sleep_ms(2)
+        utime.sleep_ms(2)
 
     """ Write i2c buffer """
     def _write(self, buffer):
