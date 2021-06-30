@@ -54,12 +54,12 @@ class RTC_HP:
   def readTime(self):
     rdata = self._i2c.readfrom_mem(self._addr, RTC_SECOND_ADDR, 7)
     return (
-      self.bcdToDec(rdata[6]) + 2000,
-      self.bcdToDec(rdata[5] & 0x1f),
-      self.bcdToDec(rdata[3] & 0x3f),
-      DAY_OF_WEEK[self.bcdToDec(rdata[4] & 0x07)],
-      self.bcdToDec(rdata[2] & 0x3f),
-      self.bcdToDec(rdata[1]) & 0x7f,
-      self.bcdToDec(rdata[0])
+      self.bcdToDec(rdata[6]) + 2000, # year
+      self.bcdToDec(rdata[5] & 0x1f), # month
+      self.bcdToDec(rdata[3] & 0x3f), # day
+      DAY_OF_WEEK[self.bcdToDec(rdata[4] & 0x07)], # wday
+      self.bcdToDec(rdata[2] & 0x3f), # hour
+      self.bcdToDec(rdata[1]) & 0x7f, # minute
+      self.bcdToDec(rdata[0]) # second
     )
   
