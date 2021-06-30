@@ -1,7 +1,7 @@
 from micropython import const
 
 # I2C-Adresse des PCF80063A
-RTC_ADDRESS = const(0x51)
+RTC_HP_ADDRESS = const(0x51)
 
 # registar overview - crtl & status reg
 RTC_CTRL_1 = const(0x00)
@@ -20,8 +20,8 @@ RTC_YEAR_ADDR	  = const(0x0a)
 
 DAY_OF_WEEK = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
 
-class RTC:
-  def __init__(self, i2c, addr=RTC_ADDRESS):
+class RTC_HP:
+  def __init__(self, i2c, addr=RTC_HP_ADDRESS):
     self._addr = addr
     self._i2c = i2c
 
