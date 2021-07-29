@@ -2,7 +2,8 @@ import time
 from micropython import const
 
 _SGP30_DEFAULT_I2C_ADDR = const(0x58)
-_SGP30_FEATURESET = const(0x0020)
+_SGP30_FEATURESETS = const(0x0020, 0x0022)
+
 _SGP30_CRC8_POLYNOMIAL = const(0x31)
 _SGP30_CRC8_INIT = const(0xFF)
 _SGP30_WORD_LEN = const(2)
@@ -19,7 +20,7 @@ class SGP30:
     self._addr = address
     self.serial = self._i2c_read_words_from_cmd(command=[0x36, 0x82], reply_size=3, delay=0.01)
     featureset = self._i2c_read_words_from_cmd([0x20, 0x2f], 1, 0.01)
-    if featureset[0] != _SGP30_FEATURESET:
+    if featureset[0] != _SGP30_FEATURESETS:
       raise RuntimeError('SGP30 Not detected')
     self.initialise_indoor_air_quality()
 
