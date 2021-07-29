@@ -2,7 +2,7 @@ import time
 from micropython import const
 
 _SGP30_DEFAULT_I2C_ADDR = const(0x58)
-_SGP30_FEATURESETS = const(0x0020, 0x0022)
+_SGP30_FEATURESETS = (0x0020, 0x0022)
 
 _SGP30_CRC8_POLYNOMIAL = const(0x31)
 _SGP30_CRC8_INIT = const(0xFF)
