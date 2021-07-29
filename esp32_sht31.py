@@ -13,14 +13,14 @@ class SHT31(object):
   # This static map helps keeping the heap and program logic cleaner
   _map_cs_r = {
   	True: {
-      R_HIGH : b'\x2c\x06',
-      R_MEDIUM : b'\x2c\x0d',
-      R_LOW: b'\x2c\x10'
+      R_HIGH : b'\\x2c\\x06',
+      R_MEDIUM : b'\\x2c\\x0d',
+      R_LOW: b'\\x2c\\x10'
       },
     False: {
-      R_HIGH : b'\x24\x00',
-      R_MEDIUM : b'\x24\x0b',
-      R_LOW: b'\x24\x16'
+      R_HIGH : b'\\x24\\x00',
+      R_MEDIUM : b'\\x24\\x0b',
+      R_LOW: b'\\x24\\x16'
       }
     }
 
