@@ -24,22 +24,18 @@ class SGP30:
       raise RuntimeError('SGP30 Not detected')
     self.initialise_indoor_air_quality()
 
-  @property
   def total_organic_compound(self):
     """Total Volatile Organic Compound in parts per billion."""
     return self.indoor_air_quality[1]
 
-  @property
   def baseline_total_organic_compound(self):
     """Total Volatile Organic Compound baseline value"""
     return self.indoor_air_quality_baseline[1]
 
-  @property
   def co2_equivalent(self):
     """Carbon Dioxide Equivalent in parts per million"""
     return self.indoor_air_quality[0]
 
-  @property
   def baseline_co2_equivilant(self):
     """Carbon Dioxide Equivalent baseline value"""
     return self.indoor_air_quality_baseline[0]
